@@ -1,0 +1,72 @@
+<div>
+    <!-- <h2>This is from Data component</h2>
+    <h3>ProductId: {{productId}}</h3>
+    <h3>Description: {{description}}</h3>
+    <h3>Brand: {{brand}}</h3>
+    <h3>Price: {{price}}</h3>
+    <h3>In stock: {{availableQty}}</h3>
+    <h3>
+        <input type="text" name="orderedQty" [(ngModel)]="orderedQty"> {{orderedQty}}
+        <input type="button" name="orderBtn" value="Order" (click)="placeOrder()" [disabled]="isAvailable">
+    </h3>
+
+    <h3 [style.color]="freeShipping ? 'green' : 'red'">
+        FREE SHIPPING
+    </h3> -->
+    
+    <div>
+        <h2>Are you a member</h2>
+        <input type="checkbox" name="member" [(ngModel)]="isMember" checked=""/>
+    </div>
+
+    <div *ngIf="isMember; else nonmember">
+        <h2>Members Area</h2>
+        <h4>The fact of you being a member is {{isMember}}</h4>
+        <h4>The following are your valued offers</h4>
+        <h4>Discount vouchers up to 5000 on booking flights</h4>
+        <h4>5% Discount on purchase of Gold Ornaments worth 200000 and above</h4>
+    </div>
+    
+    <ng-template #nonmember>
+        <h2>Non-Members Area</h2>
+        <h4>Hurry! Register to avail 5 bonus offers free</h4>
+        <h4>On registration you will be eligible for a Platinum Credit Card</h4>
+    </ng-template>
+</div>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Description</th>
+            <th>Brand</th>
+            <th>Price</th>
+            <th>Available Qty</th>
+            <th>Free Shipping</th>
+            <th>Order Quantity</th> <!-- New column for order quantity -->
+            <th>Action</th> <!-- New column for actions -->
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{ product.productId }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.brand }}</td>
+            <td>{{ product.price | currency }}</td>
+            <td>{{ product.availableQty }}</td>
+            <td >{{ product.freeShipping ? 'Yes' : 'No' }}</td>
+            <td>
+                <input type="number" [(ngModel)]="orderedQty[product.productId]" 
+                       min="1" max="{{ product.availableQty }}" 
+                       placeholder="Qty">
+            </td>
+            <td>
+                <input type="button" 
+                       value="Place Order" 
+                       (click)="placeOrder(product)" 
+                       [disabled]="!orderedQty[product.productId] || orderedQty[product.productId] > product.availableQty || orderedQty[product.productId] <= 0">
+            </td>
+        </tr>
+    </tbody>
+</table>
+
