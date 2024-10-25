@@ -1,0 +1,12 @@
+<!-- birds.component.html -->
+<h2 id="bird-head">Bird Information</h2>
+<div class="bird-grid">
+    <div class="bird-tile" *ngFor="let bird of birds">
+      <img [src]="bird.imageUrl" alt="{{ bird.name }}" class="bird-image">
+      <h3>{{ bird.name }}</h3>
+      <p><strong>Scientific Name:</strong> {{ bird.scientificName }}</p>
+      <p><strong>Family:</strong> {{ bird.family }}</p>
+      <p><strong>Habitat:</strong> {{ bird.habitat }}</p>
+    </div>
+  </div>
+  

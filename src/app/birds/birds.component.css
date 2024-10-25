@@ -1,0 +1,47 @@
+/* birds.component.css */
+.bird-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; /* Space between tiles */
+    margin: 20px;
+}
+
+#bird-head {
+    margin-left: 20px; /* Adjust the value as needed */
+}
+
+.bird-tile {
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Smooth scaling effect on hover */
+    text-align: center; /* Center align text and images */
+}
+
+.bird-tile h3 {
+    margin: 10px 0; /* Margin for heading */
+    font-size: 1.5em; /* Adjust font size */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Change text color */
+    font-family: 'Arial', sans-serif; /* Change font family */
+}
+
+.bird-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: Add border radius for images */
+}
+
+.bird-tile:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Additional styles for text in the tile */
+.bird-tile p {
+    font-size: 1em; /* Font size for paragraph text */
+    color: #666; /* Change color for paragraph text */
+    line-height: 1.5; /* Line height for better readability */
+    margin: 0; /* Reset margin */
+}
