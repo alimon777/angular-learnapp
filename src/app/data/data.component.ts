@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
+import { Product } from '../Product';
 
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css']
 })
-export class DataComponent {
+export class DataComponent implements OnInit {
+  // for intializing the getProduct method to get the data
+  ngOnInit(): void {
+    this.getProducts();
+  }
   orderedQty: { [productId: number]: number } = {};
+  isMember: boolean = true;
   products: any[] = [
     {
         productId: 1456,
@@ -35,9 +42,13 @@ export class DataComponent {
         freeShipping: true,
         orderedQty: 0 // Initialize the ordered quantity
     }
-];
-
-  isMember: boolean = true;
+  ];
+  products2: Product[] = [];
+  constructor(private service: DataService) {}
+  public getProducts():void {
+    this.products2=this.service.getProducts();
+  }
+  
 
   public placeOrder(product: any): void {
     const quantity = this.orderedQty[product.productId];
