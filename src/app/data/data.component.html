@@ -1,16 +1,16 @@
 <div>
     <div *ngFor="let product of products2;">
-        {{product.productId}}
+        {{product.id}}
         {{product.description}}
         {{product.brand}}
-        {{product.productId}}
-        {{product.qty}}
+        {{product.id}}
+        {{product.quantity}}
         {{product.price}}
     </div>
 
 
     <!-- <h2>This is from Data component</h2>
-    <h3>ProductId: {{productId}}</h3>
+    <h3>id: {{id}}</h3>
     <h3>Description: {{description}}</h3>
     <h3>Brand: {{brand}}</h3>
     <h3>Price: {{price}}</h3>
@@ -59,14 +59,14 @@
     </thead>
     <tbody>
         <tr *ngFor="let product of products">
-            <td>{{ product.productId }}</td>
+            <td>{{ product.id }}</td>
             <td>{{ product.description }}</td>
             <td>{{ product.brand }}</td>
             <td>{{ product.price | currency }}</td>
             <td>{{ product.availableQty }}</td>
             <td >{{ product.freeShipping ? 'Yes' : 'No' }}</td>
             <td>
-                <input type="number" [(ngModel)]="orderedQty[product.productId]" 
+                <input type="number" [(ngModel)]="orderedQty[product.id]" 
                        min="1" max="{{ product.availableQty }}" 
                        placeholder="Qty">
             </td>
@@ -74,7 +74,7 @@
                 <input type="button" 
                        value="Place Order" 
                        (click)="placeOrder(product)" 
-                       [disabled]="!orderedQty[product.productId] || orderedQty[product.productId] > product.availableQty || orderedQty[product.productId] <= 0">
+                       [disabled]="!orderedQty[product.id] || orderedQty[product.productId] > product.availableQty || orderedQty[product.productId] <= 0">
             </td>
         </tr>
     </tbody>
