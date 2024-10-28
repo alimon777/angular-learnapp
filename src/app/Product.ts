@@ -1,15 +1,15 @@
 export class Product {
-    productId: number;
-    description: string;
+    id: number;
     brand: string;
-    qty:number;
+    description: string;
+    quantity:number;
     price:number;
 
-    constructor(productId:number, description:string, brand:string, qty:number, price:number){
-        this.productId=productId;
-        this.description=description;
+    constructor(id:number, brand:string, description:string, quantity:number, price:number){
+        this.id=id;
         this.brand=brand;
-        this.qty=qty;
+        this.description=description;
+        this.quantity=quantity;
         this.price=price;
     }
 }
