@@ -1,48 +1,49 @@
-<h4 class="text-primary p-3">Create a Product - FormBuilder</h4>
-<div class="container">
+<h4 class="text-success p-3">Create a Product - FormBuilder</h4>
+<div class="container bg-light text-dark p-4 rounded">
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        
         <div class="mb-3">
-            <label for="productId" class="form-label">Product ID</label>
-            <input type="text" formControlName="productId" id="productId" class="form-control" />
+            <label for="productId" class="form-label text-success">Product ID</label>
+            <input type="text" formControlName="productId" id="productId" class="form-control bg-white" />
         </div>
 
         <div class="mb-3">
-            <label for="brand" class="form-label">Brand</label>
-            <input type="text" formControlName="brand" id="brand" class="form-control" />
+            <label for="brand" class="form-label text-success">Brand</label>
+            <input type="text" formControlName="brand" id="brand" class="form-control bg-white" />
         </div>
 
-        <div formGroupName="description" class="border p-3 mb-3">
-            <h5 class="text-secondary">Description</h5>
+        <div formGroupName="description" class="border border-success p-3 mb-3 bg-light">
+            <h5 class="text-success">Description</h5>
             <div class="mb-3">
-                <label for="age" class="form-label">Age</label>
-                <input type="text" formControlName="age" id="age" class="form-control" />
+                <label for="age" class="form-label text-success">Age</label>
+                <input type="text" formControlName="age" id="age" class="form-control bg-white" />
             </div>
             <div class="mb-3">
-                <label for="seasons" class="form-label">Seasons</label>
-                <input type="text" formControlName="seasons" id="seasons" class="form-control" />
+                <label for="seasons" class="form-label text-success">Seasons</label>
+                <input type="text" formControlName="seasons" id="seasons" class="form-control bg-white" />
             </div>
         </div>
 
         <div class="mb-3">
-            <label for="quantity" class="form-label">Quantity</label>
-            <input type="text" formControlName="quantity" id="quantity" class="form-control" />
+            <label for="quantity" class="form-label text-success">Quantity</label>
+            <input type="text" formControlName="quantity" id="quantity" class="form-control bg-white" />
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input type="text" formControlName="price" id="price" class="form-control" />
+            <label for="price" class="form-label text-success">Price</label>
+            <input type="text" formControlName="price" id="price" class="form-control bg-white" />
         </div>
 
         <div formArrayName="suppliers" class="mb-3">
-            <label class="form-label">Suppliers</label>
-            <button type="button" class="btn btn-outline-secondary btn-sm ms-2 mb-3" (click)="addNewSupplier()">Add New Supplier</button>
+            <label class="form-label text-success">Suppliers</label>
+            <button type="button" class="btn btn-outline-success btn-sm ms-2 mb-3" (click)="addNewSupplier()">Add New Supplier</button>
 
             <div *ngFor="let supplier of suppliers.controls; let i = index" class="input-group mb-2">
-                <span class="input-group-text">New Supplier</span>
-                <input type="text" [formControlName]="i" class="form-control" />
+                <span class="input-group-text bg-success text-light">New Supplier</span>
+                <input type="text" [formControlName]="i" class="form-control bg-white" />
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+        <button type="submit" class="btn btn-success" [disabled]="!productForm.valid">Submit</button>
     </form>
 </div>

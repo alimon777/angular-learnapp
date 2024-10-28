@@ -17,6 +17,8 @@ export class FormbuilderComponent {
       age: [0],
       seasons: [''],
     }),
+    quantity:[0],
+    price:[0],
     suppliers: this.formBuilder.array([this.formBuilder.control('')]),
   });
 

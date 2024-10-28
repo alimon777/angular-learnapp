@@ -1,32 +1,32 @@
-<h4 class="text-primary p-3">Product Form - Reactive</h4>
-<div class="container form-container">
+<div class="container form-container bg-dark text-light p-4 rounded">
+    <h4 class="text-light p-3">Product Form - Reactive</h4>
     <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
         
         <div class="mb-3">
-            <label for="id" class="form-label">Product ID:</label>
-            <input type="text" formControlName="id" id="id" class="form-control" />
+            <label for="id" class="form-label text-light">Product ID:</label>
+            <input type="text" formControlName="id" id="id" class="form-control bg-secondary text-light border-0" />
         </div>
 
         <div class="mb-3">
-            <label for="brand" class="form-label">Brand:</label>
-            <input type="text" formControlName="brand" id="brand" class="form-control" />
+            <label for="brand" class="form-label text-light">Brand:</label>
+            <input type="text" formControlName="brand" id="brand" class="form-control bg-secondary text-light border-0" />
         </div>
 
         <div class="mb-3">
-            <label for="description" class="form-label">Description:</label>
-            <input type="text" formControlName="description" id="description" class="form-control" />
+            <label for="description" class="form-label text-light">Description:</label>
+            <input type="text" formControlName="description" id="description" class="form-control bg-secondary text-light border-0" />
         </div>
 
         <div class="mb-3">
-            <label for="quantity" class="form-label">Quantity:</label>
-            <input type="number" formControlName="quantity" id="quantity" class="form-control" />
+            <label for="quantity" class="form-label text-light">Quantity:</label>
+            <input type="number" formControlName="quantity" id="quantity" class="form-control bg-secondary text-light border-0" />
         </div>
 
         <div class="mb-3">
-            <label for="price" class="form-label">Price:</label>
-            <input type="number" formControlName="price" id="price" class="form-control" />
+            <label for="price" class="form-label text-light">Price:</label>
+            <input type="number" formControlName="price" id="price" class="form-control bg-secondary text-light border-0" />
         </div>
 
-        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+        <button type="submit" class="btn btn-outline-light" [disabled]="!productForm.valid">Submit</button>
     </form>
 </div>
