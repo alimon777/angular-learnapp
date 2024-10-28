@@ -18,7 +18,7 @@ export class HttpComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.addProduct(this.newProduct);
+    // this.addProduct(this.newProduct);
     // this.deleteProduct(19);
     // this.updateProduct(this.newProduct);
     this.fetchAllProducts();

@@ -1,0 +1,48 @@
+<h4 class="text-primary p-3">Create a Product - FormBuilder</h4>
+<div class="container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="productId" class="form-label">Product ID</label>
+            <input type="text" formControlName="productId" id="productId" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand</label>
+            <input type="text" formControlName="brand" id="brand" class="form-control" />
+        </div>
+
+        <div formGroupName="description" class="border p-3 mb-3">
+            <h5 class="text-secondary">Description</h5>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="text" formControlName="age" id="age" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="seasons" class="form-label">Seasons</label>
+                <input type="text" formControlName="seasons" id="seasons" class="form-control" />
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="text" formControlName="quantity" id="quantity" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" formControlName="price" id="price" class="form-control" />
+        </div>
+
+        <div formArrayName="suppliers" class="mb-3">
+            <label class="form-label">Suppliers</label>
+            <button type="button" class="btn btn-outline-secondary btn-sm ms-2 mb-3" (click)="addNewSupplier()">Add New Supplier</button>
+
+            <div *ngFor="let supplier of suppliers.controls; let i = index" class="input-group mb-2">
+                <span class="input-group-text">New Supplier</span>
+                <input type="text" [formControlName]="i" class="form-control" />
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
+    </form>
+</div>

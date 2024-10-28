@@ -1,21 +1,32 @@
-<h4>Product Form - Reactive</h4>
-<div class="form-container">
-    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-        <label for="id">Product ID:</label>
-        <input type="text" formControlName="id" />
+<h4 class="text-primary p-3">Product Form - Reactive</h4>
+<div class="container form-container">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+        
+        <div class="mb-3">
+            <label for="id" class="form-label">Product ID:</label>
+            <input type="text" formControlName="id" id="id" class="form-control" />
+        </div>
 
-        <label for="brand">Brand:</label>
-        <input type="text" formControlName="brand" />
+        <div class="mb-3">
+            <label for="brand" class="form-label">Brand:</label>
+            <input type="text" formControlName="brand" id="brand" class="form-control" />
+        </div>
 
-        <label for="description">Description:</label>
-        <input type="text" formControlName="description" />
+        <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <input type="text" formControlName="description" id="description" class="form-control" />
+        </div>
 
-        <label for="quantity">Quantity:</label>
-        <input type="number" formControlName="quantity" />
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity:</label>
+            <input type="number" formControlName="quantity" id="quantity" class="form-control" />
+        </div>
 
-        <label for="price">Price:</label>
-        <input type="number" formControlName="price" />
+        <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <input type="number" formControlName="price" id="price" class="form-control" />
+        </div>
 
-        <button type="submit" [disabled]="!productForm.valid">Submit</button>
+        <button type="submit" class="btn btn-primary" [disabled]="!productForm.valid">Submit</button>
     </form>
 </div>

@@ -9,6 +9,7 @@ import { BirdsComponent } from './birds/birds.component';
 import { HttpComponent } from './http/http.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { CreateComponent } from './create/create.component';
+import { FormbuilderComponent } from './formbuilder/formbuilder.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CreateComponent } from './create/create.component';
     BirdsComponent,
     HttpComponent,
     ReactiveComponent,
-    CreateComponent
+    CreateComponent,
+    FormbuilderComponent
   ],
   imports: [
     BrowserModule,
